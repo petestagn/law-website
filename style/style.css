@@ -1,0 +1,143 @@
+:root {
+  --noto-font: "Noto Serif Tamil", serif;
+  --raleway-font: "Raleway", sans-serif;
+  --bg-dark: #005792;
+  --bg-light: #D1F4FA;
+  --bck-grnd: #F9F9F9;
+  --trans-duration: 300ms;
+  --header-h1-wdth: min-content;
+  --h1-fnt-wght: 800;
+  --h1-fnt-sz: 2.7rem;
+}
+
+.practice .title-header, header .title-header {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: var(--raleway-font);
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bck-grnd);
+}
+
+nav {
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  background-color: var(--bck-grnd);
+  z-index: 1;
+}
+nav h1 {
+  font-family: var(--noto-font);
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  transition: color var(--trans-duration) ease-in-out;
+  font-size: 0.87rem;
+  font-weight: 600;
+}
+nav ul li a:hover {
+  color: var(--bg-dark);
+}
+
+header {
+  height: 100vh;
+  background-image: url("../images/city-scape.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--bg-dark);
+  mix-blend-mode: hue;
+}
+header .title-header {
+  margin-right: auto;
+  justify-content: flex-start;
+  gap: 1.4rem;
+  flex-direction: column;
+  background-color: rgba(0, 57, 95, 0.8);
+  color: var(--bck-grnd);
+}
+header .title-header h1 {
+  width: var(--header-h1-wdth);
+  padding-top: 15rem;
+  font-weight: var(--h1-fnt-wght);
+  font-size: var(--h1-fnt-sz);
+}
+header .title-header p {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.practice {
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: beige;
+}
+.practice .title-header {
+  align-items: flex-start;
+  background-color: var(--bg-light);
+}
+.practice .title-header h1 {
+  width: var(--header-h1-wdth);
+  padding-top: 10rem;
+  font-weight: var(--h1-fnt-wght);
+  font-size: var(--h1-fnt-sz);
+}
+.practice .practice-info {
+  height: 100%;
+  width: 45%;
+  margin-right: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-items: center;
+  padding: 0 1.5rem;
+  background-color: aqua;
+}
+.practice .practice-info .col {
+  height: 70%;
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+  background-color: aquamarine;
+}
+
+/*# sourceMappingURL=style.css.map */

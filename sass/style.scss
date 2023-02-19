@@ -1,0 +1,176 @@
+:root {
+    --noto-font: 'Noto Serif Tamil', serif;
+    --raleway-font: 'Raleway', sans-serif;
+    --bg-dark: #005792;
+    --bg-light: #D1F4FA;
+    --bck-grnd: #F9F9F9;
+    --trans-duration: 300ms;
+    --header-h1-wdth: min-content;
+    --h1-fnt-wght: 800;
+    --h1-fnt-sz: 2.7rem;
+}
+
+
+
+
+
+@mixin flex($justify-content: center, $align-items: center) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin bg-img($bckgrnd-sz: cover, $bckgrnd-pos: center, $bckgrnd-repeat: no-repeat) {
+    background-size: $bckgrnd-sz;
+    background-position: $bckgrnd-pos;
+    background-repeat: $bckgrnd-repeat;
+}
+
+%sec-title-header {
+    width: 40%;
+    height: 100%;
+    @include flex;
+}
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font: {
+        size: 16px;
+        family: var(--raleway-font);
+    }
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bck-grnd);
+}
+
+
+
+
+
+
+nav {
+    height: 10vh;
+    @include flex(space-around);
+    position: fixed;
+    width: 100%;
+    background-color: var(--bck-grnd);
+    z-index: 1;
+
+    h1 {
+        font-family: var(--noto-font)
+    }
+
+    ul {
+        @include flex(space-around);
+        width: 50%;
+
+        li {
+            list-style: none;
+
+            a {
+                text-decoration: none;
+                color: black;
+                transition: color var(--trans-duration) ease-in-out;
+
+                font: {
+                    size: .87rem;
+                    weight: 600;
+                }
+
+                &:hover {
+                    color: var(--bg-dark);
+                }
+            }
+        }
+    }
+}
+header {
+    height: 100vh;
+    background-image: url("../images/city-scape.jpg");
+    @include bg-img;
+    background-attachment: fixed;
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: var(--bg-dark);
+        mix-blend-mode: hue;
+    }
+
+    .title-header {
+        @extend %sec-title-header;
+        margin-right: auto;
+        justify-content: flex-start;
+        gap: 1.4rem;
+        flex-direction: column;
+        background-color: darken(rgba(0, 87, 146, .8), 10%);
+        color: var(--bck-grnd);
+
+        h1 {
+            width: var(--header-h1-wdth);
+            padding-top: 15rem;
+
+            font: {
+                weight: var(--h1-fnt-wght);
+                size: var(--h1-fnt-sz);
+            }
+        }
+        p {
+            font: {
+                size: 1.1rem;
+                weight: 600;
+            }
+        }
+    }
+}
+.practice {
+    height: 100vh;
+    @include flex(flex-start);
+    background-color: beige;
+
+    .title-header {
+        @extend %sec-title-header; 
+        align-items: flex-start;
+        background-color: var(--bg-light);    
+
+        h1 {
+            width: var(--header-h1-wdth);
+            padding-top: 10rem;
+
+            font: {
+                weight: var(--h1-fnt-wght);
+                size: var(--h1-fnt-sz);
+            }
+        }
+    }
+    .practice-info {
+        height: 100%;
+        width: 45%;
+        margin-right: auto;
+        @include flex(flex-start);
+        align-items: center;
+        padding: 0 1.5rem;
+        background-color: aqua;
+
+        .col {
+            height: 70%;
+            flex-basis: 100%;
+            @include flex(center, stretch);
+            flex-direction: column;
+            background-color: aquamarine;
+        }
+    }
+}
