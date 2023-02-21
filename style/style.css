@@ -10,14 +10,6 @@
   --h1-fnt-sz: 2.7rem;
 }
 
-.practice .title-header, header .title-header {
-  width: 40%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -25,13 +17,14 @@
 }
 
 html {
+  min-height: 100vh;
   font-size: 16px;
   font-family: var(--raleway-font);
 }
 
 body {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   background-color: var(--bck-grnd);
 }
 
@@ -84,6 +77,11 @@ header::after {
   mix-blend-mode: hue;
 }
 header .title-header {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-right: auto;
   justify-content: flex-start;
   gap: 1.4rem;
@@ -103,41 +101,173 @@ header .title-header p {
 }
 
 .practice {
-  height: 100vh;
+  height: 90vh;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  background-color: beige;
+  flex-wrap: wrap;
 }
 .practice .title-header {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   align-items: flex-start;
   background-color: var(--bg-light);
 }
 .practice .title-header h1 {
   width: var(--header-h1-wdth);
   padding-top: 10rem;
+  color: var(--bg-dark);
   font-weight: var(--h1-fnt-wght);
   font-size: var(--h1-fnt-sz);
 }
 .practice .practice-info {
   height: 100%;
-  width: 45%;
+  width: 55%;
   margin-right: auto;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  align-items: center;
-  padding: 0 1.5rem;
-  background-color: aqua;
+  flex-wrap: wrap;
+  padding: 0 4rem 0 3rem;
 }
 .practice .practice-info .col {
   height: 70%;
-  flex-basis: 100%;
+  flex: 0 50%;
   display: flex;
   justify-content: center;
-  align-items: stretch;
+  align-items: center;
   flex-direction: column;
-  background-color: aquamarine;
+}
+.practice .practice-info .col .info-wrap {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1rem;
+}
+.practice .practice-info .col .info-wrap h3 {
+  position: relative;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.practice .practice-info .col .info-wrap h3::before {
+  content: "";
+  width: 10px;
+  aspect-ratio: 1/1;
+  background-color: #0085df;
+  position: absolute;
+  left: -30px;
+  top: 10px;
+}
+.practice .practice-info .col p {
+  width: 27ch;
+}
+
+.vision {
+  min-height: 100vh;
+  background-color: #002f50;
+  padding: 8% 20%;
+  text-align: center;
+  display: grid;
+  grid-template: "h1" 25% "p" 74% 100%;
+}
+.vision h1 {
+  color: var(--bck-grnd);
+  font-size: var(--h1-fnt-sz);
+  font-weight: var(--h1-fnt-wght);
+}
+.vision p {
+  color: var(--bck-grnd);
+  font-weight: 500;
+  font-size: 1.1rem;
+  font-family: var(--raleway-font);
+}
+
+.image-bg {
+  height: 80vh;
+  background-image: url(../images/people-working.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.attorney {
+  height: 90vh;
+  background-color: var(--bg-light);
+}
+.attorney .title {
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.attorney .title h1 {
+  color: var(--bg-dark);
+  font-size: var(--h1-fnt-sz);
+  font-weight: var(--h1-fnt-wght);
+}
+.attorney .team-members {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6rem;
+  height: 60%;
+  margin: 0 auto;
+  min-width: 80%;
+}
+.attorney .team-members .member {
+  height: 100%;
+  width: 200px;
+}
+.attorney .team-members .member .img {
+  height: 60%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.attorney .team-members .member .img:nth-child(1) {
+  background-image: url("../images/people-working.jpg");
+}
+.attorney .team-members .member .img:nth-child(2) {
+  background-image: url("../images/people-working.jpg");
+}
+.attorney .team-members .member .img:nth-child(3) {
+  background-image: url("../images/people-working.jpg");
+}
+.attorney .team-members .member .info {
+  text-align: center;
+  height: 40%;
+  color: var(--bg-dark);
+}
+.attorney .team-members .member .info h3 {
+  padding: 1.1rem 0 0.5rem;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.attorney .team-members .member .info h4 {
+  padding-bottom: 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.attorney .team-members .member .info hr {
+  margin-bottom: 1.4rem;
+  color: black;
+  width: 100%;
+}
+.attorney .team-members .member .info p {
+  line-height: 1.3rem;
+  font-weight: 600;
+}
+
+.contact-info {
+  height: 100vh;
 }
 
 /*# sourceMappingURL=style.css.map */
