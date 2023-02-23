@@ -103,7 +103,6 @@ header .title-header p {
 }
 
 .practice {
-  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,7 +110,7 @@ header .title-header p {
 }
 .practice .title-header {
   width: 40%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -126,7 +125,7 @@ header .title-header p {
   font-size: var(--h1-fnt-sz);
 }
 .practice .practice-info {
-  height: 100%;
+  height: 100vh;
   width: 55%;
   margin-right: auto;
   display: flex;
@@ -270,36 +269,73 @@ header .title-header p {
 
 .contact-info {
   height: 100vh;
-  background-color: rgba(0, 87, 146, 0.5);
+  background-color: rgba(0, 87, 146, 0.55);
   position: relative;
   display: grid;
-  grid-template: "title info" 100%/40% 60%;
-}
-.contact-info * {
-  border: 2px solid yellowgreen;
+  grid-template: "title info" 100vh/40% 60%;
 }
 .contact-info::after {
+  content: "";
   background-image: url("../images/city-scape.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: absolute;
   inset: 0;
+  z-index: -1;
+  background-attachment: fixed;
 }
 .contact-info .title-header {
   grid-area: title;
-  place-self: center;
   height: 100%;
   width: 100%;
-  background-color: var(--bg-dark);
+  background-color: rgba(0, 57, 95, 0.8);
 }
 .contact-info .title-header h1 {
   color: var(--bck-grnd);
+  width: max-content;
+  margin: 20% auto;
+  padding-left: 4rem;
   font-size: var(--h1-fnt-sz);
   font-weight: var(--h1-fnt-wght);
 }
 .contact-info .contact {
   grid-area: info;
+  padding: 2rem 3rem;
+}
+.contact-info .contact .title-wrap p {
+  font-size: 700;
+}
+.contact-info .contact .title-wrap,
+.contact-info .contact .address {
+  margin-bottom: 2rem;
+  color: var(--bck-grnd);
+}
+.contact-info .contact .address a {
+  color: var(--bck-grnd);
+  display: inline-block;
+  margin-top: 1.5rem;
+}
+.contact-info .contact p {
+  color: var(--bck-grnd);
+}
+.contact-info .contact form {
+  display: grid;
+  grid-auto-rows: 1fr;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+  color: var(--bck-grnd);
+}
+.contact-info .contact form label {
+  width: 50%;
+  font-weight: 700;
+}
+.contact-info .contact form input {
+  width: 50%;
+  height: 1.8rem;
+}
+.contact-info .contact form input[type=submit] {
+  cursor: pointer;
 }
 
 .to-top {
