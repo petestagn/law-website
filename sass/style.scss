@@ -4,64 +4,6 @@
 @use 'base/reset' as *;
 
 
-
-// :root {
-//     --noto-font: 'Noto Serif Tamil', serif;
-//     --raleway-font: 'Raleway', sans-serif;
-//     --bg-dark: #005792;
-//     --bg-light: #D1F4FA;
-//     --bck-grnd: #F9F9F9;
-//     --bck-grnd-opa:  background-color: darken(rgba(0, 87, 146, .8), 10%);
-//    // --brt-fnt-clr: rgb(255, 255, 255);
-//     --trans-duration: 300ms;
-//     --header-h1-wdth: min-content;
-//     --h1-fnt-wght: 800;
-//     --h1-fnt-sz: 2.7rem;
-// }  
-
-// @mixin flex($justify-content: center, $align-items: center) {
-//     display: flex;
-//     justify-content: $justify-content;
-//     align-items: $align-items;
-// }
-
-// @mixin bg-img($bckgrnd-sz: cover, $bckgrnd-pos: center, $bckgrnd-repeat: no-repeat) {
-//     background-size: $bckgrnd-sz;
-//     background-position: $bckgrnd-pos;
-//     background-repeat: $bckgrnd-repeat;
-// }
-
-
-
-
-
-// * {
-//     margin: 0;
-//     padding: 0;
-//     box-sizing: border-box;
-// }
-
-// html {
-//     min-height: 100vh;
-
-//     font: {
-//         size: 16px;
-//         family: var(--raleway-font);
-//     }
-// }
-
-// body {
-//     width: 100%;
-//     min-height: 100%;
-//     background-color: var(--bck-grnd);
-//     scroll-behavior: smooth;
-// }
-
-
-
-
-
-
 nav {
     height: 10vh;
     @include flex(space-around);
@@ -262,13 +204,9 @@ header {
     height: 90vh;
     background-color: var(--bg-light);
 
-    // background-color: chocolate;
-
         .title {
             height: 25vh;
             @include flex;
-
-            // background-color: burlywood;
 
             h1 {
                 color: var(--bg-dark);
@@ -286,14 +224,10 @@ header {
             height: 60%;
             margin: 0 auto;
             min-width: 80%;
-
-            // background-color: aquamarine;
         
             .member {
                 height: 100%;
                 width: 200px;
-
-                // border: 4px solid black;
         
                 .img {
                     height: 60%;
