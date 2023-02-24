@@ -1,0 +1,11 @@
+@mixin flex($justify-content: center, $align-items: center) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin bg-img($bckgrnd-sz: cover, $bckgrnd-pos: center, $bckgrnd-repeat: no-repeat) {
+    background-size: $bckgrnd-sz;
+    background-position: $bckgrnd-pos;
+    background-repeat: $bckgrnd-repeat;
+}
