@@ -9,3 +9,9 @@
     background-position: $bckgrnd-pos;
     background-repeat: $bckgrnd-repeat;
 }
+
+@mixin breakpoint($size){
+    @media(max-width: $size) {
+        @content;
+    }
+}

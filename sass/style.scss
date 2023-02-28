@@ -4,10 +4,12 @@
 @use 'base/reset' as *;
 
 
+
 nav {
     height: 10vh;
     @include flex(space-around);
     position: fixed;
+    padding: 1rem;
     width: 100%;
     background-color: var(--bck-grnd);
     z-index: 1;
@@ -37,7 +39,28 @@ nav {
                     color: var(--bg-dark);
                 }
             }
+        }   
+            @include breakpoint(900px) {
+               display: none;
         }
+    }
+    .hamburger {
+        height: 30px;
+        width: 30px;
+        margin-left: auto;
+        cursor: pointer;
+        display: none;
+
+
+        .line {
+            width: 100%;
+            height: 4px;
+            margin-bottom: 5px;
+            background-color: var(--bg-dark);
+        }
+        @include breakpoint(900px) {
+            display: block;
+     }
     }
 }
 header {
@@ -80,6 +103,10 @@ header {
                 weight: 600;
             }
         }
+        @include breakpoint(700px) {
+            margin: 0;
+            width: 100%;
+         }
     }
 }
 
@@ -88,20 +115,18 @@ header {
 
 
 .practice {
-    // height: 90vh;
+    height: 100vh;
     @include flex;
     flex-wrap: wrap;
 
     .title-header {
         width: 40%;
-        height: 100vh;
+        height: 100%;
         @include flex;
-        align-items: flex-start;
-        background-color: var(--bg-light);    
+        background-color: var(--bg-light);  
 
         h1 {
             width: var(--header-h1-wdth);
-            padding-top: 10rem;
             color: var(--bg-dark);
 
             font: {
@@ -109,19 +134,24 @@ header {
                 size: var(--h1-fnt-sz);
             }
         }
+        @include breakpoint(700px){
+            writing-mode: vertical-lr;
+            width: 30%;
+        }
     }
     .practice-info {
-        height: 100vh;
+        height: 100%;
         width: 55%;
         margin-right: auto;
-        @include flex(center, center);
+        @include flex;
         flex-wrap: wrap;
         padding: 0 4rem 0 3rem;
 
         .col {
-            height: 70%;
+            // height: 500px;
             flex: 0 50%;
             @include flex;
+            gap: 1.5rem;
             flex-direction: column;
 
             .info-wrap {
@@ -145,14 +175,26 @@ header {
                     position: absolute;
                     left: -30px;
                     top: 10px;
-                }
+
+                    @include breakpoint(700px) {
+                        opacity: 0;
+                    }
                 }
             }
+        }
             p {
                 width: 27ch;
             }
         }
+        @include breakpoint(700px) {
+           padding: 0 0 0 1rem;
+           margin: 0;
+         }
+         @include breakpoint(700px){
+           width: 70%;
+        }
     }
+
 }
 
 // ---------vision section----------
@@ -184,6 +226,12 @@ header {
             size: 1.1rem;
             family: var(--raleway-font);
         }
+        @include breakpoint(700px) {
+            text-align: left;
+        }
+    }
+    @include breakpoint(700px) {
+        padding: 5%;
     }
 }
 
@@ -201,7 +249,7 @@ header {
 
 
 .attorney {
-    height: 90vh;
+    height: 100dvh;
     background-color: var(--bg-light);
 
         .title {
@@ -221,7 +269,7 @@ header {
             @include flex;
             flex-wrap: wrap;
             gap: 6rem;
-            height: 60%;
+            height: 400px;
             margin: 0 auto;
             min-width: 80%;
         
@@ -277,11 +325,17 @@ header {
             }
         }
     }
+    @include breakpoint(806px) {
+        height: 170vh;
+    }
+    @include breakpoint(515px) {
+        height: 230vh;
+    }
 }
 
 .contact-info {
     height: 100vh;
-    background-color: rgba(0, 87, 146, .55);
+    background-color: rgba(0, 87, 146, 40%);
     position: relative;
     display: grid;
     grid-template:
@@ -301,11 +355,12 @@ header {
         grid-area: title;
         height: 100%;
         width: 100%;
+        // @include flex;
         background-color: darken( rgba(0, 87, 146, .8), 10%);
         
         h1 {
             color: var(--bck-grnd);
-            width: max-content;
+            width: min-content;
             margin: 20% auto;
             padding-left: 4rem;
 
@@ -313,6 +368,12 @@ header {
                 size: var(--h1-fnt-sz);
                 weight: var(--h1-fnt-wght);
             }
+            @include breakpoint(700px) {
+                padding-left: 6.5%;
+            }
+        }
+        @include breakpoint(700px) {
+            writing-mode: vertical-lr;
         }
     }
     .contact {
@@ -352,14 +413,23 @@ header {
                 font-weight: 700;
             }
             input {
-                width: 50%;
+                width: 80%;
                 height: 1.8rem;
 
                 &[type="submit"] {
                     cursor: pointer;
                 }
+                @include breakpoint(700px) {
+                    width: 100%;
+                }
             }
         }
+    }
+    @include breakpoint(700px) {
+        grid-template: 
+            "title info" 100%/
+            30% 70%;
+        
     }
 }
 
@@ -382,3 +452,5 @@ footer {
     height: 13vh;
     @include flex;
 }
+
+
