@@ -108,6 +108,9 @@ header {
             width: 100%;
          }
     }
+    @include breakpoint(900px) {
+        background-attachment: scroll;
+    }
 }
 
 
@@ -242,6 +245,10 @@ header {
     background-image: url(../images/people-working.jpg);
     @include bg-img;
     background-attachment: fixed;
+
+    @include breakpoint(900px) {
+        background-attachment: scroll;
+    }
 }
 
 
@@ -350,6 +357,10 @@ header {
         inset: 0;
         z-index: -1;
         background-attachment: fixed;
+
+        @include breakpoint(900px) {
+            background-attachment: scroll;
+        }
     }
     .title-header {
         grid-area: title;

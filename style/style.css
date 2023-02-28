@@ -133,6 +133,11 @@ header .title-header p {
     width: 100%;
   }
 }
+@media (max-width: 900px) {
+  header {
+    background-attachment: scroll;
+  }
+}
 
 .practice {
   height: 100vh;
@@ -259,6 +264,11 @@ header .title-header p {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+@media (max-width: 900px) {
+  .image-bg {
+    background-attachment: scroll;
+  }
+}
 
 .attorney {
   height: 100dvh;
@@ -357,6 +367,11 @@ header .title-header p {
   inset: 0;
   z-index: -1;
   background-attachment: fixed;
+}
+@media (max-width: 900px) {
+  .contact-info::after {
+    background-attachment: scroll;
+  }
 }
 .contact-info .title-header {
   grid-area: title;
