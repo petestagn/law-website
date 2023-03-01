@@ -2,6 +2,7 @@
 @use 'abstracts/variables' as *;
 @use 'abstracts/mixin' as *;
 @use 'base/reset' as *;
+@use 'components/animations' as *;
 
 
 
@@ -21,6 +22,7 @@ nav {
     ul {
         @include flex(space-around);
         width: 50%;
+        opacity: 0;
 
         li {
             list-style: none;
@@ -43,6 +45,7 @@ nav {
             @include breakpoint(900px) {
                display: none;
         }
+        animation: fade-in var(--trans-duration) ease-in 700ms forwards;
     }
     .hamburger {
         height: 30px;
@@ -56,7 +59,7 @@ nav {
             width: 100%;
             height: 4px;
             margin-bottom: 5px;
-            background-color: var(--bg-dark);
+            background-color: black;
         }
         @include breakpoint(900px) {
             display: block;
@@ -91,6 +94,8 @@ header {
         h1 {
             width: var(--header-h1-wdth);
             padding-top: 10rem + 5rem;
+            opacity: 0;
+            animation: fade-in var(--trans-duration) ease-in 1s forwards;
 
             font: {
                 weight: var(--h1-fnt-wght);
@@ -98,6 +103,9 @@ header {
             }
         }
         p {
+            opacity: 0;
+            animation: fade-in var(--trans-duration) ease-in  1.3s forwards;
+
             font: {
                 size: 1.1rem;
                 weight: 600;
@@ -149,6 +157,7 @@ header {
         @include flex;
         flex-wrap: wrap;
         padding: 0 4rem 0 3rem;
+        transition: opacity var(--trans-duration) ease-in;
 
         .col {
             // height: 500px;
@@ -335,7 +344,7 @@ header {
     @include breakpoint(806px) {
         height: 170vh;
     }
-    @include breakpoint(515px) {
+    @include breakpoint(410px) {
         height: 230vh;
     }
 }
