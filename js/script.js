@@ -1,16 +1,21 @@
 
 
-const practice = document.querySelector('.practice-info');
+const practice = document.querySelector('.practice');
 
-let pracOptions = {
-    threshold: .6
-};
+const practiceInfo = document.querySelector('.practice-info')
 
-let pracFunction = (entries, pracObserver) => {
-    entries.forEach((entry) => {
-        console.log(entry);
-    })
+options = {
+    threshold: .5
 }
 
-let pracObserver = new IntersectionObserver(pracFunction, pracOptions);
+const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+           if(entry.isIntersecting) {
+            practiceInfo.classList.add('fadeIn');
+           }
+        })
+    }, options);
+
+observer.observe(practice)
+
 

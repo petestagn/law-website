@@ -32,7 +32,7 @@ body {
   background-color: var(--bck-grnd);
 }
 
-.fade-in {
+.fadeIn {
   opacity: 1;
 }
 
@@ -193,6 +193,7 @@ header .title-header p {
   align-items: center;
   flex-wrap: wrap;
   padding: 0 4rem 0 3rem;
+  opacity: 0;
   transition: opacity var(--trans-duration) ease-in;
 }
 .practice .practice-info .col {
