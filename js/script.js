@@ -13,9 +13,10 @@ const observer = new IntersectionObserver((entries, observer) => {
            if(entry.isIntersecting) {
             practiceInfo.classList.add('fadeIn');
            }
+        // console.log(entry);
         })
     }, options);
 
-observer.observe(practice)
+observer.observe(practice);
 
 
