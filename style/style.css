@@ -6,6 +6,7 @@
   --bck-grnd: #F9F9F9;
   --bck-grnd-opa: background-color: darken(rgba(0, 87, 146, .8), 10%);
   --trans-duration: 300ms;
+  --loading-duration: 200ms;
   --header-h1-wdth: min-content;
   --h1-fnt-wght: 800;
   --h1-fnt-sz: 2.7rem;
@@ -32,8 +33,14 @@ body {
   background-color: var(--bck-grnd);
 }
 
-.fadeIn {
+.in-out.vision h1,
+.in-out.vision p {
   opacity: 1;
+}
+
+.practice-info.opacity {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
 }
 
 @keyframes fade-in {
@@ -64,7 +71,7 @@ nav ul {
   align-items: center;
   width: 50%;
   opacity: 0;
-  animation: fade-in var(--trans-duration) ease-in 700ms forwards;
+  animation: fade-in var(--loading-duration) ease-in 700ms forwards;
 }
 nav ul li {
   list-style: none;
@@ -72,7 +79,7 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   color: black;
-  transition: color var(--trans-duration) ease-in-out;
+  transition: color var(--loading-duration) ease-in-out;
   font-size: 0.87rem;
   font-weight: 600;
 }
@@ -135,13 +142,13 @@ header .title-header h1 {
   width: var(--header-h1-wdth);
   padding-top: 15rem;
   opacity: 0;
-  animation: fade-in var(--trans-duration) ease-in 1s forwards;
+  animation: fade-in var(--loading-duration) ease-in 1s forwards;
   font-weight: var(--h1-fnt-wght);
   font-size: var(--h1-fnt-sz);
 }
 header .title-header p {
   opacity: 0;
-  animation: fade-in var(--trans-duration) ease-in 1.3s forwards;
+  animation: fade-in var(--loading-duration) ease-in 1.4s forwards;
   font-size: 1.1rem;
   font-weight: 600;
 }
@@ -193,8 +200,10 @@ header .title-header p {
   align-items: center;
   flex-wrap: wrap;
   padding: 0 4rem 0 3rem;
+  transform: translateX(25px);
   opacity: 0;
-  transition: opacity var(--trans-duration) ease-in;
+  transition: opacity var(--loading-duration) ease-in;
+  transition: transform 1s ease-in;
 }
 .practice .practice-info .col {
   flex: 0 50%;
@@ -231,7 +240,7 @@ header .title-header p {
     opacity: 0;
   }
 }
-.practice .practice-info .col p {
+.practice .practice-info .col .info-wrap p {
   width: 27ch;
 }
 @media (max-width: 700px) {
@@ -274,6 +283,11 @@ header .title-header p {
   .vision {
     padding: 5%;
   }
+}
+.vision h1,
+.vision p {
+  opacity: 0;
+  transition: opacity var(--loading-duration) ease-in 300ms;
 }
 
 .image-bg {

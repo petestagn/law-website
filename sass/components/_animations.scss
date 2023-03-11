@@ -1,7 +1,13 @@
 
 
-.fadeIn {
+.in-out.vision h1,
+.in-out.vision p {
     opacity: 1;
+}
+
+.practice-info.opacity {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
 }
 
 
@@ -10,6 +16,6 @@
         opacity: 0;
     }
     100% {
-        opacity: 1;
+        opacity: 1;     
     }
 }

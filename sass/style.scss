@@ -30,7 +30,7 @@ nav {
             a {
                 text-decoration: none;
                 color: black;
-                transition: color var(--trans-duration) ease-in-out;
+                transition: color var(--loading-duration) ease-in-out;
 
                 font: {
                     size: .87rem;
@@ -45,7 +45,7 @@ nav {
             @include breakpoint(900px) {
                display: none;
         }
-        animation: fade-in var(--trans-duration) ease-in 700ms forwards;
+        animation: fade-in var(--loading-duration) ease-in 700ms forwards;
     }
     .hamburger {
         height: 30px;
@@ -95,7 +95,7 @@ header {
             width: var(--header-h1-wdth);
             padding-top: 10rem + 5rem;
             opacity: 0;
-            animation: fade-in var(--trans-duration) ease-in 1s forwards;
+            animation: fade-in var(--loading-duration) ease-in 1s forwards;
 
             font: {
                 weight: var(--h1-fnt-wght);
@@ -104,7 +104,7 @@ header {
         }
         p {
             opacity: 0;
-            animation: fade-in var(--trans-duration) ease-in  1.3s forwards;
+            animation: fade-in var(--loading-duration) ease-in  1.4s forwards;
 
             font: {
                 size: 1.1rem;
@@ -157,12 +157,12 @@ header {
         @include flex;
         flex-wrap: wrap;
         padding: 0 4rem 0 3rem;
-        // --------intersection observer---------
+        transform: translateX(25px);
         opacity: 0;
-        transition: opacity var(--trans-duration) ease-in;
+        transition: opacity var(--loading-duration) ease-in;
+        transition: transform 1s ease-in;
 
         .col {
-            // height: 500px;
             flex: 0 50%;
             @include flex;
             gap: 1.5rem;
@@ -195,11 +195,11 @@ header {
                     }
                 }
             }
-        }
             p {
                 width: 27ch;
             }
         }
+    }
         @include breakpoint(700px) {
            padding: 0 0 0 1rem;
            margin: 0;
@@ -208,7 +208,6 @@ header {
            width: 70%;
         }
     }
-
 }
 
 // ---------vision section----------
@@ -246,6 +245,11 @@ header {
     }
     @include breakpoint(700px) {
         padding: 5%;
+    }
+    h1,
+    p {
+        opacity: 0;
+        transition: opacity var(--loading-duration) ease-in 300ms;
     }
 }
 
