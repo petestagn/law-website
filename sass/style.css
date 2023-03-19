@@ -1,0 +1,517 @@
+:root {
+  --noto-font: "Noto Serif Tamil", serif;
+  --raleway-font: "Raleway", sans-serif;
+  --bg-dark: #005792;
+  --bg-light: #D1F4FA;
+  --bck-grnd: #F9F9F9;
+  --bck-grnd-opa: background-color: darken(rgba(0, 87, 146, .8), 10%);
+  --trans-duration: 300ms;
+  --loading-duration: 200ms;
+  --header-h1-wdth: min-content;
+  --h1-fnt-wght: 800;
+  --h1-fnt-sz: 2.7rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100vh;
+  height: 100%;
+  scroll-behavior: smooth;
+  font-size: 16px;
+  font-family: var(--raleway-font);
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  background-color: var(--bck-grnd);
+}
+
+.in-out.vision h1,
+.in-out.vision p {
+  opacity: 1;
+}
+
+.practice-info.opacity {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+nav {
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  padding: 1rem;
+  width: 100%;
+  background-color: var(--bck-grnd);
+  z-index: 1;
+}
+nav h1 {
+  font-family: var(--noto-font);
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  opacity: 0;
+  -webkit-animation: fade-in var(--loading-duration) ease-in 700ms forwards;
+          animation: fade-in var(--loading-duration) ease-in 700ms forwards;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  transition: color var(--loading-duration) ease-in-out;
+  font-size: 0.87rem;
+  font-weight: 600;
+}
+nav ul li a:hover {
+  color: var(--bg-dark);
+}
+@media (max-width: 900px) {
+  nav ul {
+    display: none;
+  }
+}
+nav .hamburger {
+  height: 30px;
+  width: 30px;
+  margin-left: auto;
+  cursor: pointer;
+  display: none;
+}
+nav .hamburger .line {
+  width: 100%;
+  height: 4px;
+  margin-bottom: 5px;
+  background-color: black;
+}
+@media (max-width: 900px) {
+  nav .hamburger {
+    display: block;
+  }
+}
+
+header {
+  height: 100vh;
+  background-image: url("../images/city-scape.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--bg-dark);
+  mix-blend-mode: hue;
+}
+header .title-header {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: auto;
+  justify-content: flex-start;
+  gap: 1.4rem;
+  flex-direction: column;
+  background-color: rgba(0, 57, 95, 0.8);
+  color: var(--bck-grnd);
+}
+header .title-header h1 {
+  width: var(--header-h1-wdth);
+  padding-top: 15rem;
+  opacity: 0;
+  -webkit-animation: fade-in var(--loading-duration) ease-in 1s forwards;
+          animation: fade-in var(--loading-duration) ease-in 1s forwards;
+  font-weight: var(--h1-fnt-wght);
+  font-size: var(--h1-fnt-sz);
+}
+header .title-header p {
+  opacity: 0;
+  -webkit-animation: fade-in var(--loading-duration) ease-in 1.4s forwards;
+          animation: fade-in var(--loading-duration) ease-in 1.4s forwards;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+@media (max-width: 700px) {
+  header .title-header {
+    margin: 0;
+    width: 100%;
+  }
+}
+@media (max-width: 900px) {
+  header {
+    background-attachment: scroll;
+  }
+}
+
+.practice {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.practice .title-header {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-light);
+}
+.practice .title-header h1 {
+  width: var(--header-h1-wdth);
+  color: var(--bg-dark);
+  font-weight: var(--h1-fnt-wght);
+  font-size: var(--h1-fnt-sz);
+}
+@media (max-width: 700px) {
+  .practice .title-header {
+    -ms-writing-mode: tb-lr;
+        writing-mode: vertical-lr;
+    width: 30%;
+  }
+}
+.practice .practice-info {
+  height: 100%;
+  width: 55%;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 4rem 0 3rem;
+  transform: translateX(25px);
+  opacity: 0;
+  transition: opacity var(--loading-duration) ease-in;
+  transition: transform 1s ease-in;
+}
+.practice .practice-info .col {
+  flex: 0 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-direction: column;
+}
+.practice .practice-info .col .info-wrap {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1rem;
+}
+.practice .practice-info .col .info-wrap h3 {
+  position: relative;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.practice .practice-info .col .info-wrap h3::before {
+  content: "";
+  width: 10px;
+  aspect-ratio: 1/1;
+  background-color: #0085df;
+  position: absolute;
+  left: -30px;
+  top: 10px;
+}
+@media (max-width: 700px) {
+  .practice .practice-info .col .info-wrap h3::before {
+    opacity: 0;
+  }
+}
+.practice .practice-info .col .info-wrap p {
+  width: 27ch;
+}
+@media (max-width: 700px) {
+  .practice .practice-info {
+    padding: 0 0 0 1rem;
+    margin: 0;
+  }
+}
+@media (max-width: 700px) {
+  .practice .practice-info {
+    width: 70%;
+  }
+}
+
+.vision {
+  min-height: 100vh;
+  background-color: #002f50;
+  padding: 8% 20%;
+  text-align: center;
+  display: grid;
+  grid-template: "h1" 25% "p" 74% 100%;
+}
+.vision h1 {
+  color: var(--bck-grnd);
+  font-size: var(--h1-fnt-sz);
+  font-weight: var(--h1-fnt-wght);
+}
+.vision p {
+  color: var(--bck-grnd);
+  font-weight: 500;
+  font-size: 1.1rem;
+  font-family: var(--raleway-font);
+}
+@media (max-width: 700px) {
+  .vision p {
+    text-align: left;
+  }
+}
+@media (max-width: 700px) {
+  .vision {
+    padding: 5%;
+  }
+}
+.vision h1,
+.vision p {
+  opacity: 0;
+  transition: opacity var(--loading-duration) ease-in 300ms;
+}
+
+.image-bg {
+  height: 80vh;
+  background-image: url(../images/people-working.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+@media (max-width: 900px) {
+  .image-bg {
+    background-attachment: scroll;
+  }
+}
+
+.attorney {
+  height: 100dvh;
+  background-color: var(--bg-light);
+}
+.attorney .title {
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.attorney .title h1 {
+  color: var(--bg-dark);
+  font-size: var(--h1-fnt-sz);
+  font-weight: var(--h1-fnt-wght);
+}
+.attorney .team-members {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6rem;
+  height: 400px;
+  margin: 0 auto;
+  min-width: 80%;
+}
+.attorney .team-members .member {
+  height: 100%;
+  width: 200px;
+}
+.attorney .team-members .member .img {
+  height: 60%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.attorney .team-members .member .img:nth-child(1) {
+  background-image: url("../images/people-working.jpg");
+}
+.attorney .team-members .member .img:nth-child(2) {
+  background-image: url("../images/people-working.jpg");
+}
+.attorney .team-members .member .img:nth-child(3) {
+  background-image: url("../images/people-working.jpg");
+}
+.attorney .team-members .member .info {
+  text-align: center;
+  height: 40%;
+  color: var(--bg-dark);
+}
+.attorney .team-members .member .info h3 {
+  padding: 1.1rem 0 0.5rem;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.attorney .team-members .member .info h4 {
+  padding-bottom: 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.attorney .team-members .member .info hr {
+  margin-bottom: 1.4rem;
+  color: black;
+  width: 100%;
+}
+.attorney .team-members .member .info p {
+  line-height: 1.3rem;
+  font-weight: 600;
+}
+@media (max-width: 806px) {
+  .attorney {
+    height: 170vh;
+  }
+}
+@media (max-width: 410px) {
+  .attorney {
+    height: 230vh;
+  }
+}
+
+.contact-info {
+  height: 100vh;
+  background-color: rgba(0, 87, 146, 0.4);
+  position: relative;
+  display: grid;
+  grid-template: "title info" 100vh/40% 60%;
+}
+.contact-info::after {
+  content: "";
+  background-image: url("../images/city-scape.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-attachment: fixed;
+}
+@media (max-width: 900px) {
+  .contact-info::after {
+    background-attachment: scroll;
+  }
+}
+.contact-info .title-header {
+  grid-area: title;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 57, 95, 0.8);
+}
+.contact-info .title-header h1 {
+  color: var(--bck-grnd);
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  margin: 20% auto;
+  padding-left: 4rem;
+  font-size: var(--h1-fnt-sz);
+  font-weight: var(--h1-fnt-wght);
+}
+@media (max-width: 700px) {
+  .contact-info .title-header h1 {
+    padding-left: 6.5%;
+  }
+}
+@media (max-width: 700px) {
+  .contact-info .title-header {
+    -ms-writing-mode: tb-lr;
+        writing-mode: vertical-lr;
+  }
+}
+.contact-info .contact {
+  grid-area: info;
+  padding: 2rem 3rem;
+}
+.contact-info .contact .title-wrap p {
+  font-size: 700;
+}
+.contact-info .contact .title-wrap,
+.contact-info .contact .address {
+  margin-bottom: 2rem;
+  color: var(--bck-grnd);
+}
+.contact-info .contact .address a {
+  color: var(--bck-grnd);
+  display: inline-block;
+  margin-top: 1.5rem;
+}
+.contact-info .contact p {
+  color: var(--bck-grnd);
+}
+.contact-info .contact form {
+  display: grid;
+  grid-auto-rows: 1fr;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+  color: var(--bck-grnd);
+}
+.contact-info .contact form label {
+  width: 50%;
+  font-weight: 700;
+}
+.contact-info .contact form input {
+  width: 80%;
+  height: 1.8rem;
+}
+.contact-info .contact form input[type=submit] {
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .contact-info .contact form input {
+    width: 100%;
+  }
+}
+@media (max-width: 700px) {
+  .contact-info {
+    grid-template: "title info" 100%/30% 70%;
+  }
+}
+
+.to-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #002f50;
+  height: 10vh;
+}
+.to-top a {
+  color: var(--bck-grnd);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+footer {
+  height: 13vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=style.css.map */
